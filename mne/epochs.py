@@ -784,7 +784,7 @@ class BaseEpochs(
                 )
             self._do_baseline = True
             picks = self._detrend_picks
-            rescale(self._data, self.times, baseline, copy=False, picks=picks)
+            self._data = rescale(self._data, self.times, baseline, copy=False, picks=picks)
             self._do_baseline = False
         else:  # logging happens in "rescale" in "if" branch
             logger.info(_log_rescale(baseline))
